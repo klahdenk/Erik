@@ -268,9 +268,9 @@ extension WebKitLayoutEngine {
                 let ctx = UIGraphicsGetCurrentContext()
                 let scale : CGFloat! = size.width / capturedView.layer.bounds.size.width
                 let transform = CGAffineTransformMakeScale(scale, scale)
-                CGContextConcatCTM(ctx, transform)
+                CGContextConcatCTM(ctx!, transform)
                 capturedView.drawViewHierarchyInRect(capturedView.bounds, afterScreenUpdates: true)
-                let  image : ErikImage = UIGraphicsGetImageFromCurrentImageContext()
+                let  image : ErikImage = UIGraphicsGetImageFromCurrentImageContext()!
                 UIGraphicsEndImageContext();
                 return image
             }
